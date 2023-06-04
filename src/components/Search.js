@@ -39,11 +39,8 @@ const Search = ({ setIsLoading, setSearchResults }) => {
   useEffect(() => {
     Promise.all([fetchAllCenturies(), fetchAllClassifications()])
     .then((values)=>{
-      console.log(values);
       setCenturyList(values[0]);
-      console.log(centuryList);
       setClassificationList(values[1]);
-      console.log(classificationList);
     })
     .catch((error) => {
       console.error("use effect in search", error);
@@ -69,7 +66,6 @@ const Search = ({ setIsLoading, setSearchResults }) => {
   return <form id="search" onSubmit={async (event) => {
     event.preventDefault();
     setIsLoading(true);
-    console.log("is loading")
     try {
       fetchQueryResults({ century, classification, queryString });
       setSearchResults({ century, classification, queryString });
@@ -77,7 +73,6 @@ const Search = ({ setIsLoading, setSearchResults }) => {
       console.log("submit on serch", err)
     }
     setIsLoading(false);
-    console.log("loading")
   }}>
     <fieldset>
       <label htmlFor="keywords">Query</label>

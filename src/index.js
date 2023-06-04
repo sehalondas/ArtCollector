@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import {
  //Feature,
   Loading,
-  //Preview,
+  Preview,
   Search,
   Title
 } from './components';
@@ -26,10 +26,8 @@ const App = () => {
 
   function checkLoading(state){
     if(state === true) {
-      console.log(isLoading)
       return ( <Loading/>);
     } else if(state === false) {
-      console.log(isLoading)
       return null;
     }
   }
@@ -42,7 +40,7 @@ const App = () => {
 
     {/* <Preview /> needs props for searchResults, setIsLoading and setSearchResults (clicking prev/next buttons), and setFeaturedResult (clicking a preview) */}
 
-    {/* <Preview searchResults={searchResults} setIsLoading={setIsLoading} setSearchResults={setSearchResults} setFeaturedResult={setFeaturedResult} /> */}
+    <Preview searchResults={searchResults} setIsLoading={setIsLoading} setSearchResults={setSearchResults} setFeaturedResult={setFeaturedResult} />
 
     {/* <Feature /> needs props for featuredResult, as well as setIsLoading and setSearchResults (clicking on searchable properties) */}
 
@@ -50,7 +48,7 @@ const App = () => {
 
     {/* <Loading /> is static, but should only render when isLoading is true */}
     
-    {isLoading=== true?false:null}
+    {/* <Loading isLoading={isLoading=== true?false:null}/> */}
     {checkLoading(isLoading)}
     {/* //use a ternary and render null if isLoading is false */}
   </div>
