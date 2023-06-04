@@ -4,14 +4,14 @@
  * You need to replace YOUR_API_KEY in the string associated with KEY with your actual API key
  */
 export const BASE_URL = 'https://api.harvardartmuseums.org';
-export const KEY = 'apikey=YOUR_API_KEY';
+export const KEY = 'apikey=54455752-a6cf-4299-8347-58f7d069d239';
 
 /**
  * This will make a call to the API for a single term and value (e.g. "person", and "unknown"), and return the result
  */
 export async function fetchQueryResultsFromTermAndValue(term, value) {
   try {
-    const response = await fetch(`${ BASE_URL }/object?${ KEY }&${ term }=${ encodeURI(value.split('-').join('|')) }`);
+    const response = await fetch(`${BASE_URL}/object?${KEY}&${term}=${encodeURI(value.split('-').join('|'))}`);
     const data = await response.json();
 
     return data;
@@ -44,8 +44,7 @@ export async function fetchQueryResults({
   classification,
   queryString,
 }) {
-  const url = `${ BASE_URL }/object?${ KEY }&classification=${ classification }&century=${ 
-    century }&keyword=${ queryString }`;
+  const url = `${BASE_URL}/object?${KEY}&classification=${classification}&century=${century}&keyword=${queryString}`;
 
   try {
     const response = await fetch(url);
@@ -65,7 +64,7 @@ export async function fetchAllCenturies() {
     return JSON.parse(localStorage.getItem('centuries'));
   }
 
-  const url = `${ BASE_URL }/century?${ KEY }&size=100&sort=temporalorder`;
+  const url = `${BASE_URL}/century?${KEY}&size=100&sort=temporalorder`;
 
   try {
     const response = await fetch(url);
@@ -88,7 +87,7 @@ export async function fetchAllClassifications() {
     return JSON.parse(localStorage.getItem('classifications'));
   }
 
-  const url = `${ BASE_URL }/classification?${ KEY }&size=100&sort=name`;
+  const url = `${BASE_URL}/classification?${KEY}&size=100&sort=name`;
 
   try {
     const response = await fetch(url);

@@ -35,19 +35,19 @@ const Preview = (props) => {
 
   return <aside id="preview">
     <header className="pagination">
-      {/* This button should be disabled if nothing is set in info.prev, and should call fetchPage with info.prev when clicked */}
+      {apple/* This button should be disabled if nothing is set in info.prev, and should call fetchPage with info.prev when clicked */}
       <button 
-        disabled={} 
+        disabled={apple} 
         className="previous"
-        onClick={}>Previous</button>
-      {/* This button should be disabled if nothing is set in info.next, and should call fetchPage with info.next when clicked */}
+        onClick={apple}>Previous</button>
+      {apple/* This button should be disabled if nothing is set in info.next, and should call fetchPage with info.next when clicked */}
       <button
-        disabled={}
+        disabled={apple}
         className="next"
-        onClick={}>Next</button>
+        onClick={apple}>Next</button>
     </header>
     <section className="results">
-      {
+      {apple
         /* Here we should map over the records, and render something like this for each one:
           <div  
             key={ index }
